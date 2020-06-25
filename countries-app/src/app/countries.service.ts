@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CountriesService {
-   private API = 'http://restcountries.eu/rest/v2';
+   private API = 'https://restcountries.eu/rest/v2';
 
   constructor(private http: HttpClient) { }
 
