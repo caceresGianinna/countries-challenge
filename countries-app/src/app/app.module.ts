@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { CountryComponent } from './country/country.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CountryDetailComponent } from './country-detail/country-detail.component';
+import { ThemeDirective } from './theme.directive';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { CountryDetailComponent } from './country-detail/country-detail.componen
     CountryComponent,
     DashboardComponent,
     CountryDetailComponent,
+    ThemeDirective,
   ],
   imports: [
     BrowserModule,

@@ -1,23 +1,14 @@
 import { Injectable } from '@angular/core';
-
-
-export interface Theme {
-  'input-color': string;
-  'elements-color': string;
-  'text-color': string;
-  'background-color': string;
-}
-
-interface Themes {
-  [name: string]: Theme;
-}
+import {Themes, Theme} from './models/Theme';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ThemeService {
-  isLightTheme: boolean;
-  selectedTheme: Theme;
+  private isLightThemeSubject: BehaviorSubject<boolean> = new BehaviorSubject(true);
+  isLightTheme$: Observable<boolean>;
+  selectedTheme$ = new BehaviorSubject<Theme>(null);
 
   readonly themes: Themes = {
     'light': {
@@ -34,19 +25,33 @@ export class ThemeService {
     }
 
   }
+
   constructor() {
-    this.selectedTheme = this.themes.light;
-    this.isLightTheme = true;
-   }
+    // this.selectedTheme = this.themes.light;
+    this.selectedTheme$.next(this.themes.light);
+    this.isLightTheme$ = this.isLightThemeSubject.asObservable();
+    this.isLightThemeSubject.next(true);
+
+    this.selectedTheme$
+    .subscribe(theme => this.applyTheme(theme));
+  }
 
 
-  setTheme(theme: 'light' | 'dark') {   
-    this.isLightTheme = theme === 'light' ? true : false ;
-    this.selectedTheme = this.themes[theme];  
+  setTheme(theme: 'light' | 'dark') {
+    const isLight = theme === 'light' ? true : false;
+    this.isLightThemeSubject.next(isLight);
+    // this.selectedTheme = this.themes[theme];
+    this.selectedTheme$.next(this.themes[theme]);
   }
 
   getTheme() {
-    return this.selectedTheme;
+    return this.selectedTheme$.value;
+  }
+
+  applyTheme(theme: Theme) { 
+    Object.keys(theme).forEach(prop =>{
+      document.documentElement.style.setProperty(`--${prop}`, theme[prop])}
+    );
   }
 
 }

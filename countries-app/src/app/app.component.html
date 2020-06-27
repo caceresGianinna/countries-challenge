@@ -1,16 +1,19 @@
-<h1>Where in the world?</h1>
+<section [appTheme]="theme$ | async">
+    <h1>Where in the world?</h1>
 
-<button (click)="toggleTheme()"> 
-    <span *ngIf="isLight;else lightMode">
-        <i class="far fa-moon"></i> Dark mode
-    </span>
-    <ng-template #lightMode>
-        <span>
-            <i class="far fa-sun"></i> Light mode
+    <button (click)="toggleTheme()" class="cta"> 
+        <span *ngIf="isLight;else lightMode">
+            <i class="far fa-moon"></i> Dark mode
         </span>
-    </ng-template>
+        <ng-template #lightMode>
+            <span>
+                <i class="far fa-sun"></i> Light mode
+            </span>
+        </ng-template>
+    
+    </button>
+</section>
 
-</button>
 
 
 <router-outlet></router-outlet>

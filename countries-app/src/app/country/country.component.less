@@ -1,13 +1,17 @@
-@import '../../styles.less';
-
-.img-fluid  {
-    width: 100%;
-    height: 200px;
-}
+@card-border-radius: 10px;
 
 .country-card {
-    background-color:var(--background-color);
-    line-height: 1em;
+    background-color: var(--elements-color);
+    height: 100%;
+    color: var(--text-color);
+    border-radius: @card-border-radius;
+    cursor: pointer;
+
+    & img {
+        height: 200px;
+        border-top-left-radius: @card-border-radius;
+        border-top-right-radius: @card-border-radius;
+    }
 }
 
 .country-card-details {
