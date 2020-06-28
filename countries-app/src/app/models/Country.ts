@@ -8,10 +8,27 @@ export interface Country {
     area: number;
     borders: string[];
     nativeName: string;
+    currencies: string;
+    languages: string;
+    flag: string;
+}
+
+export interface CountryResponse {
+    name: string;
+    capital: string;
+    topLevelDomain: string[];
+    region: string;
+    subregion: string;
+    population: number;
+    area: number;
+    borders: string[];
+    nativeName: string;
     currencies: Currency[];
     languages: Language[];
     flag: string;
 }
+
+
 
 interface Language {
     iso639_1: string;

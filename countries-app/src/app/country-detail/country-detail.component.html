@@ -1,1 +1,43 @@
-<p>country-detail works!</p>
+<div class="country-detail__wrapper" [appTheme]="selectedTheme$ | async">
+    <div class="header">
+        <button class="cta">
+            <i class="fas fa-long-arrow-alt-left"></i>
+            Back </button>
+    </div>
+
+    <div class="flag">
+        <img [attr.src]="country?.flag" [attr.alt]="country?.name" class="img-fluid">
+    </div>
+    <div class="country-title">
+       <h2>{{country?.name}}</h2> 
+    </div>
+    <div class="basic-details">
+        <p>
+            <span class="font-weight-bold">Native Name: </span> {{country.nativeName}}
+        </p>
+        <p>
+            <span class="font-weight-bold">Population: </span> {{country.population |  number}}
+        </p>
+        <p>
+            <span class="font-weight-bold">Region: </span> {{country.region}}
+        </p>
+        <p>
+            <span class="font-weight-bold">Sub Region: </span> {{country.subregion}}
+        </p>
+        <p>
+            <span class="font-weight-bold">Capital: </span> {{country.capital}}
+        </p>
+    </div>
+    <div class="extra-details">
+        <p>
+            <span class="font-weight-bold">Top Level Domain: </span> {{country.topLevelDomain}}
+        </p>
+        <p>
+            <span class="font-weight-bold">Currencies: </span> {{country.currencies}}
+        </p>
+        <p>
+            <span class="font-weight-bold">Languages: </span> {{country.languages}}
+        </p>
+    </div>
+    <div class="border-countries"></div>
+</div>

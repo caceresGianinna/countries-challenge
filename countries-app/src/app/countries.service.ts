@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Country } from './models/Country';
+import { Country, CountryResponse } from './models/Country';
 import { Observable } from 'rxjs';
 
 
@@ -28,7 +28,7 @@ export class CountriesService {
    * Search by country name. It can be the native name or partial name
    * @param countryName 
    */
-  getCountryByName(countryName: string): Observable<Country> {
-    return this.http.get(`${this.API}/name/${countryName}`) as Observable<Country>;
+  getCountryByName(countryName: string): Observable<CountryResponse[]> {
+    return this.http.get(`${this.API}/name/${countryName}`) as Observable<CountryResponse[]>;
   }
 }
