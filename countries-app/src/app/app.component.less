@@ -1,3 +1,5 @@
+@import '../styles.less';
+
 :host {
     --input-color:hsl(0, 0%, 52%);
     --elements-color: hsl(0, 0%, 100%);
@@ -9,3 +11,32 @@
     color: var(--input-color);
 }
 
+header {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 80px;
+    padding: 0 @spacing;
+    margin-bottom: 40px;
+}
+
+.cta-wrapper { 
+    justify-self: end;
+    align-self: center;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 375px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container  {
+        max-width: 1440px;
+    }
+}
+
+.container  {
+    margin-left: auto;
+    margin-right: auto;
+}
