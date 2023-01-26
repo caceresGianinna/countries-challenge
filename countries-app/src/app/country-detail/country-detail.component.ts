@@ -6,6 +6,7 @@ import { Subject, Observable } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { ThemeService } from '../theme.service';
 import { Theme } from '../models/Theme';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-country-detail',
@@ -20,6 +21,7 @@ export class CountryDetailComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute, 
     private themeService: ThemeService,
+    private router: Router,
     private service: CountriesService) { }
 
   ngOnInit(): void {
@@ -49,8 +51,13 @@ export class CountryDetailComponent implements OnInit, OnDestroy {
     return arr.map(i=> i.name).join(', ');
   }
 
+  navigateToDashboard() {
+    this.router.navigate(['']);
+  }
+
   ngOnDestroy() {
     this.destroyed$.next(true);
   }
+  
 
 }
