@@ -1,6 +1,6 @@
 <div class="country-detail__wrapper" [appTheme]="selectedTheme$ | async">
     <div class="header">
-        <button class="cta">
+        <button class="cta" >
             <i class="fas fa-long-arrow-alt-left"></i>
             Back </button>
     </div>
@@ -11,7 +11,7 @@
     <div class="country-title">
        <h2>{{country?.name}}</h2> 
     </div>
-    <div class="basic-details">
+    <div class="details-1">
         <p>
             <span class="font-weight-bold">Native Name: </span> {{country.nativeName}}
         </p>
@@ -28,7 +28,7 @@
             <span class="font-weight-bold">Capital: </span> {{country.capital}}
         </p>
     </div>
-    <div class="extra-details">
+    <div class="details-2">
         <p>
             <span class="font-weight-bold">Top Level Domain: </span> {{country.topLevelDomain}}
         </p>
@@ -39,5 +39,10 @@
             <span class="font-weight-bold">Languages: </span> {{country.languages}}
         </p>
     </div>
-    <div class="border-countries"></div>
+    <div class="border-countries">
+        <span class="font-weight-bold">Border Countries:</span>
+        <div class="tags"> France </div>
+        <div class="tags"> Belgium </div>
+        <div class="tags"> Ttst </div>
+    </div>
 </div>

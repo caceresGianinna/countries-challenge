@@ -1,5 +1,28 @@
 @import '../../styles.less';
 
+
+
+@media all and (max-width: 480px) { 
+
+    .grid-container {
+        display: grid;
+        // grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-auto-columns: auto;
+        grid-gap: 3em;
+        margin: @spacing;
+
+    }
+}
+ 
+
+@media all and (min-width: 1024px) and (max-width: 1280px) { 
+    
+}
+
+
+@media all and (max-width: 480px) { }
+ 
 .grid-container {
     display: grid;
     // grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -9,3 +32,4 @@
     margin: @spacing;
 
 }
+

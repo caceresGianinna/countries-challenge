@@ -2,38 +2,38 @@
     font-size: 16px;
 }
 
-// .header {
-//     grid-area: header;
-// }
+.country-detail__wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-gap: 2em;
+    padding: 60px;
+}
 
-// .country-title {
-//     grid-area: name;
-// }
+.header {
+    grid-column: span 3;
+}
 
-// .basic-details {
-//     grid-area: details;
-// }
+.flag {
+    grid-row: span 3;
+}
 
-// .extra-details {
-//     grid-area: extra
-// }
+.country-title {
+    grid-column: span 2;
+}
 
-// .border-countries {
-//     grid-area: footer;
-// }
+.details-1 {
+    grid-column: span 1;
 
-// .country-detail__wrapper {
-//     // display: grid;
-//     // grid-gap: 2em;
-//     // grid-template-rows: auto;
+}
 
-    
-    
-//     // grid-template-columns: 2fr 2fr;
-//     // grid-template-areas:
-//     //     "header header    header"
-//     //     "flag   name        name"
-//     //     "flag   details extra "
-//     //     "flag   flag      footer";
+.details-2 {
+    grid-column: span 1;
+}
 
-// }
+.border-countries {
+    grid-column:  span 3;
+}
+
+.tags {
+    padding: 10px;
+}
